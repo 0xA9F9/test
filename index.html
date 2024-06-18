@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <meta name="description" content="Conception et réalisation de stand événementiel.">
+  <meta name="keywords" content="Stand événementiel, Conception de stand, Réalisation de stand, Stand sur mesure, Design de stand, Stand personnalisé, Agencement de stand, Stand exposition, Salon professionnel, Stand modulaire, Event stand, Stand design, Stand production, Custom stand, Customized stand, Stand arrangement, Exhibition stand, Trade show, Modular stand">
+  <meta name="author" content="ALAIN ARZUR">
+  <link rel="stylesheet" href="styles.css">
+  <!----- icons ---->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.4.47/css/materialdesignicons.min.css" integrity="sha512-/k658G6UsCvbkGRB3vPXpsPHgWeduJwiWGPCGS14IQw3xpr63AEMdA8nMYG2gmYkXitQxDTn6iiK/2fD4T87qA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <!---- fancybox ---->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+  <!---- map ----->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+ <!---- font ----->
+<style>
+@font-face {
+    font-family: "MistralMN";
+    src: url("https://db.onlinewebfonts.com/t/956ad50ccc5b76279d6ed9f11259e1ff.eot");
+    src: url("https://db.onlinewebfonts.com/t/956ad50ccc5b76279d6ed9f11259e1ff.eot?#iefix") format("embedded-opentype"),
+         url("https://db.onlinewebfonts.com/t/956ad50ccc5b76279d6ed9f11259e1ff.woff2") format("woff2"),
+         url("https://db.onlinewebfonts.com/t/956ad50ccc5b76279d6ed9f11259e1ff.woff") format("woff"),
+         url("https://db.onlinewebfonts.com/t/956ad50ccc5b76279d6ed9f11259e1ff.ttf") format("truetype"),
+         url("https://db.onlinewebfonts.com/t/956ad50ccc5b76279d6ed9f11259e1ff.svg#MistralMN") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+</style>
+
+ </head>
+ <body>
+  <div class="loader">
+   <div class="logo">
+    <div style="
+    display: flex;
+    flex-direction: column;
+    font-size: 35px;
+">
+     <div id="typing" class="typing"></div>
+     <span class="design">Design</span>
+     <div class="box"></div>
+    </div>
+   </div>
+  </div>
+  <div id="app" class="app">
+   <div class="menu">
+    <div id="lang" class="dropdown">
+     <div class="select" @click="toggleDropdown">
+      <span class="translate"></span>
+      <span id="selectedValue">{{ currentLanguageName }}</span>
+      <i class="mdi" :class="dropdownOpen ? 'mdi-chevron-left' : 'mdi-chevron-right'"></i>
+     </div>
+     <div id="options" class="options" v-show="dropdownOpen">
+      <div class="option" v-if="lang !== 'fr'" @click="switchLanguage('fr')">{{ translations.french }}</div>
+      <div class="option" v-if="lang !== 'en'" @click="switchLanguage('en')">{{ translations.english }}</div>
+     </div>
+    </div>
+    <div class="empty"></div>
+    <div class="go">
+     <span class="mdi mdi-filter-variant clique"></span>
+     <div class="nav">
+      <a href="#REALISATIONS">{{ translations.ft }}</a> • <a href="#ABOUT">{{ translations.fs }}</a> • <a href="#CONTACT">{{ translations.fl }}</a>
+     </div>
+    </div>
+   </div>
+   <div class="block flex g10 column">
+    <div class="flex g10 center-v">
+     <div class="separator"></div>
+     <h1 id="REALISATIONS" class="title" style=" width: 100%; ">{{ translations.ft }}</h1>
+     <div class="separator"></div>
+    </div>
+    <div class="description"> {{ translations.fd }} </div>
+    <div style="display: flex; gap:50px; flex-direction: column;">
+     <div class="gallery">
+      <span class="ti" v-html="translations.be"></span>
+      <a href="img/this/1.jpg" data-fancybox="images" data-caption="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi, ut?">
+       <img  src="img/min/jpeg-optimizer_1.jpeg" alt="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi, ut?">
+      </a>
+      <a href="img/this/2.jpg" data-fancybox="images" data-caption="Image 2">
+       <img  src="img/min/jpeg-optimizer_2.jpeg" alt="Image 2">
+      </a>
+      <a href="img/this/3.jpg" data-fancybox="images" data-caption="Image 3">
+       <img  src="img/min/jpeg-optimizer_3.jpeg" alt="Image 3">
+      </a>
+      <a href="img/this/4.jpg" data-fancybox="images" data-caption="Image 4">
+       <img  src="img/min/jpeg-optimizer_4.jpeg" alt="Image 4">
+      </a>
+      <a href="img/this/5.jpg" data-fancybox="images" data-caption="Image 5">
+       <img  src="img/min/jpeg-optimizer_5.jpeg" alt="Image 5">
+      </a>
+      <a href="img/this/6.jpg" data-fancybox="images" data-caption="Image 6">
+       <img  src="img/min/jpeg-optimizer_6.jpeg" alt="Image 6">
+      </a>
+      <a href="img/this/7.jpg" data-fancybox="images" data-caption="Image 7">
+       <img  src="img/min/jpeg-optimizer_7.jpeg" alt="Image 7">
+      </a>
+      <a href="img/this/8.jpg" data-fancybox="images" data-caption="Image 8">
+       <img  src="img/min/jpeg-optimizer_8.jpeg" alt="Image 8">
+      </a>
+      <a href="img/this/9.jpg" data-fancybox="images" data-caption="Image 9">
+       <img  src="img/min/jpeg-optimizer_9.jpeg" alt="Image 9">
+      </a>
+      <a href="img/this/10.jpg" data-fancybox="images" data-caption="Image 10">
+       <img  src="img/min/jpeg-optimizer_10.jpeg" alt="Image 10">
+      </a>
+      <a href="img/this/11.jpg" data-fancybox="images" data-caption="Image 11">
+       <img  src="img/min/jpeg-optimizer_11.jpeg" alt="Image 11">
+      </a>
+      <a href="img/this/12.jpg" data-fancybox="images" data-caption="Image 12">
+       <img  src="img/min/jpeg-optimizer_12.jpeg" alt="Image 12">
+      </a>
+      <a href="img/this/13.jpg" data-fancybox="images" data-caption="Image 13">
+       <img  src="img/min/jpeg-optimizer_13.jpeg" alt="Image 13">
+      </a>
+      <!---->
+     </div>
+     <div class="gallery">
+      <span class="ti" v-html="translations.ev"></span>
+      <a href="img/this/15.jpg" data-fancybox="images" data-caption="Image 15">
+       <img  src="img/min/jpeg-optimizer_15.jpeg" alt="Image 15">
+      </a>
+      <a href="img/this/16.jpg" data-fancybox="images" data-caption="Image 16">
+       <img  src="img/min/jpeg-optimizer_16.jpeg" alt="Image 16">
+      </a>
+      <a href="img/this/17.jpg" data-fancybox="images" data-caption="Image 17">
+       <img  src="img/min/jpeg-optimizer_17.jpeg" alt="Image 17">
+      </a>
+      <a href="img/this/18.jpg" data-fancybox="images" data-caption="Image 18">
+       <img  src="img/min/jpeg-optimizer_18.jpeg" alt="Image 18">
+      </a>
+      <a href="img/this/19.jpg" data-fancybox="images" data-caption="Image 19">
+       <img  src="img/min/jpeg-optimizer_19.jpeg" alt="Image 19">
+      </a>
+      <a href="img/this/20.jpg" data-fancybox="images" data-caption="Image 20">
+       <img  src="img/min/jpeg-optimizer_20.jpeg" alt="Image 20">
+      </a>
+      <a href="img/this/21.jpg" data-fancybox="images" data-caption="Image 21">
+       <img  src="img/min/jpeg-optimizer_21.jpeg" alt="Image 21">
+      </a>
+      <a href="img/this/22.jpg" data-fancybox="images" data-caption="Image 22">
+       <img  src="img/min/jpeg-optimizer_22.jpeg" alt="Image 22">
+      </a>
+      <a href="img/this/23.jpg" data-fancybox="images" data-caption="Image 23">
+       <img  src="img/min/jpeg-optimizer_23.jpeg" alt="Image 23">
+      </a>
+      <a href="img/this/24.jpg" data-fancybox="images" data-caption="Image 24">
+       <img  src="img/min/jpeg-optimizer_24.jpeg" alt="Image 24">
+      </a>
+      <a href="img/this/25.jpg" data-fancybox="images" data-caption="Image 25">
+       <img  src="img/min/jpeg-optimizer_25.jpeg" alt="Image 25">
+      </a>
+      <a href="img/this/14.jpg" data-fancybox="images" data-caption="Image 14">
+       <img  src="img/min/jpeg-optimizer_14.jpeg" alt="Image 14">
+      </a>
+     </div>
+     <div class="gallery">
+      <span class="ti" v-html="translations.stand"></span>
+      <a href="img/this/26.jpg" data-fancybox="images" data-caption="Image 26">
+       <img  src="img/min/jpeg-optimizer_26.jpeg" alt="Image 26">
+      </a>
+      <a href="img/this/27.jpg" data-fancybox="images" data-caption="Image 27">
+       <img  src="img/min/jpeg-optimizer_27.jpeg" alt="Image 27">
+      </a>
+      <a href="img/this/28.jpg" data-fancybox="images" data-caption="Image 28">
+       <img  src="img/min/jpeg-optimizer_28.jpeg" alt="Image 28">
+      </a>
+      <a href="img/this/29.jpg" data-fancybox="images" data-caption="Image 29">
+       <img  src="img/min/jpeg-optimizer_29.jpeg" alt="Image 29">
+      </a>
+      <a href="img/this/30.jpg" data-fancybox="images" data-caption="Image 30">
+       <img  src="img/min/jpeg-optimizer_30.jpeg" alt="Image 30">
+      </a>
+      <a href="img/this/31.jpg" data-fancybox="images" data-caption="Image 31">
+       <img  src="img/min/jpeg-optimizer_31.jpeg" alt="Image 31">
+      </a>
+      <a href="img/this/32.jpg" data-fancybox="images" data-caption="Image 32">
+       <img  src="img/min/jpeg-optimizer_32.jpeg" alt="Image 32">
+      </a>
+      <a href="img/this/33.jpg" data-fancybox="images" data-caption="Image 33">
+       <img  src="img/min/jpeg-optimizer_33.jpeg" alt="Image 33">
+      </a>
+      <a href="img/this/34.jpg" data-fancybox="images" data-caption="Image 34">
+       <img  src="img/min/jpeg-optimizer_34.jpeg" alt="Image 34">
+      </a>
+      <a href="img/this/35.jpg" data-fancybox="images" data-caption="Image 35">
+       <img  src="img/min/jpeg-optimizer_35.jpeg" alt="Image 35">
+      </a>
+      <a href="img/this/36.jpg" data-fancybox="images" data-caption="Image 36">
+       <img  src="img/min/jpeg-optimizer_36.jpeg" alt="Image 36">
+      </a>
+      <a href="img/this/37.jpg" data-fancybox="images" data-caption="Image 37">
+       <img  src="img/min/jpeg-optimizer_37.jpeg" alt="Image 37">
+      </a>
+      <a href="img/this/38.jpg" data-fancybox="images" data-caption="Image 38">
+       <img  src="img/min/jpeg-optimizer_38.jpeg" alt="Image 38">
+      </a>
+      <a href="img/this/39.jpg" data-fancybox="images" data-caption="Image 39">
+       <img  src="img/min/jpeg-optimizer_39.jpeg" alt="Image 39">
+      </a>
+      <a href="img/this/40.jpg" data-fancybox="images" data-caption="Image 40">
+       <img  src="img/min/jpeg-optimizer_40.jpeg" alt="Image 40">
+      </a>
+      <a href="img/this/41.jpg" data-fancybox="images" data-caption="Image 41">
+       <img  src="img/min/jpeg-optimizer_41.jpeg" alt="Image 41">
+      </a>
+      <a href="img/this/42.jpg" data-fancybox="images" data-caption="Image 42">
+       <img  src="img/min/jpeg-optimizer_42.jpeg" alt="Image 42">
+      </a>
+      <a href="img/this/43.jpg" data-fancybox="images" data-caption="Image 43">
+       <img  src="img/min/jpeg-optimizer_43.jpeg" alt="Image 43">
+      </a>
+      <a href="img/this/44.jpg" data-fancybox="images" data-caption="Image 44">
+       <img  src="img/min/jpeg-optimizer_44.jpeg" alt="Image 44">
+      </a>
+      <a href="img/this/45.jpg" data-fancybox="images" data-caption="Image 45">
+       <img  src="img/min/jpeg-optimizer_45.jpeg" alt="Image 45">
+      </a>
+      <a href="img/this/46.jpg" data-fancybox="images" data-caption="Image 46">
+       <img  src="img/min/jpeg-optimizer_46.jpeg" alt="Image 46">
+      </a>
+      <a href="img/this/47.jpg" data-fancybox="images" data-caption="Image 47">
+       <img  src="img/min/jpeg-optimizer_47.jpeg" alt="Image 47">
+      </a>
+      <a href="img/this/48.jpg" data-fancybox="images" data-caption="Image 48">
+       <img  src="img/min/jpeg-optimizer_48.jpeg" alt="Image 48">
+      </a>
+      <a href="img/this/49.jpg" data-fancybox="images" data-caption="Image 49">
+       <img  src="img/min/jpeg-optimizer_49.jpeg" alt="Image 49">
+      </a>
+      <a href="img/this/50.jpg" data-fancybox="images" data-caption="Image 50">
+       <img  src="img/min/jpeg-optimizer_50.jpeg" alt="Image 50">
+      </a>
+      <a href="img/this/35.jpg" data-fancybox="images" data-caption="Image 35">
+       <img  src="img/min/jpeg-optimizer_35.jpeg" alt="Image 35">
+      </a>
+     </div>
+    </div>
+   </div>
+   <div class="block flex g10 column">
+    <div class="flex g10 center-v">
+     <div class="separator"></div>
+     <h1 id="ABOUT" class="title" style=" width: 100%; ">{{ translations.fs }}</h1>
+     <div class="separator"></div>
+    </div>
+    <div v-html="translations.sd"></div>
+   </div>
+   <div class="block flex g10 column">
+    <div class="flex g10 center-v">
+     <div class="separator"></div>
+     <h1 id="CONTACT" class="title" style=" width: 100%; ">{{ translations.fl }}</h1>
+     <div class="separator"></div>
+    </div>
+    <div class="map">
+     <div style="overflow: hidden;min-height: 200px;">
+      <div class="map-container">
+       <div id="mapid"></div>
+      </div>
+     </div>
+     <div v-html="translations.info"></div>
+    </div>
+    <br>
+    <center>
+     <span class="z" style=" text-transform: uppercase;">{{ translations.or }}</span>
+    </center>
+    <br>
+    <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+    <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/mayrrwwj" method="post">
+     <fieldset id="fs-frm-inputs">
+      <input type="email" name="_replyto" id="email-address" :placeholder="translations.mail" required>
+      <input type="text" name="name" id="full-name" :placeholder="translations.name" required>
+      <input type="text" name="object" id="full-name" :placeholder="translations.object" required>
+      <textarea rows="5" name="message" id="message" :placeholder="translations.write" required></textarea>
+      <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+     </fieldset>
+     <input type="submit" :value="translations.send">
+    </form>
+   </div>
+   <div class="footer">
+    <div class="separator"></div>
+    <p style='text-align: center; ' id='openModal'>{{ translations.copyright }} </p>
+    <div id="myModal" class="modal">
+     <div class="modal-content">
+      <span class="close">&times;</span>
+      <div v-html="translations.copytext"></div>
+     </div>
+    </div>
+    <br>
+   </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script src="main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script>
+   $(document).ready(function() {
+    $('[data-fancybox="images"]').fancybox({
+     loop: true,
+     buttons: ['slideShow', 'fullScreen', 'thumbs', 'close']
+    });
+   });
+  </script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+   var mymap = L.map('mapid').setView([49.14224, 1.411685], 15);
+   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+   }).addTo(mymap);
+   L.marker([49.14224, 1.411685]).addTo(mymap).bindPopup("34 Rue des Mognans, 27920 Saint - Pierre - de - Bailleul ").openPopup();
+  </script>
+ </body>
+</html>
