@@ -108,6 +108,7 @@ display:none;
   position: relative;
   cursor: pointer;
   display: none;
+  float: right;
 }
 .line span {
   background-color: #000;
